@@ -13,10 +13,10 @@ class GA:
         self.fitness_function = None
         self.maximize = False
         # genetic parameters
-        self.survivors_rate = 0.25
+        self.survivors_rate = 0.2
         self.crossover_probability = 0.5
         self.mutation_probability = 0.1
-        self.mutation_turns = 1
+        self.mutation_turns = 3
 
     def run(self):
         pop = Population()
