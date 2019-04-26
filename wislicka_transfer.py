@@ -26,20 +26,55 @@ wislicka.lines = [line125, line129, line132, line138, line152, line159, line172,
 def fitness_function(shifts):
     for idx in range(len(wislicka.lines)):
         wislicka.lines[idx].shift = shifts[idx]
-    res = 0
-    for _ in range(50):
-        res += wislicka.simulate()
-    return res / 50
+    # res = 0
+    # for _ in range(300):
+    #     res += wislicka.simulate()
+    # return res / 300
+    return wislicka.simulate()
 
-g = ga.GA()
-# 5 bits per a time shift value: in range between 0 and 31
-g.chromosome_size = len(wislicka.lines), 5
-g.population_size = 100
-g.generations = 30
-g.fitness_function = fitness_function
-winner = g.run()
-for w in winner[0]:
-    print str(w),
-print winner[1]
+# g = ga.GA()
+# # 5 bits per a time shift value: in range between 0 and 31
+# g.chromosome_size = len(wislicka.lines), 5
+# g.population_size = 100
+# g.generations = 30
+# g.fitness_function = fitness_function
+# winner = g.run()
+# print
+# for w in winner[0]:
+#     print str(w),
+# print winner[1]
 
-print fitness_function([14, 10, 13, 1, 7, 4, 1, 19, 4, 12, 1, 5, 12])
+# form the sample for initial state
+ffs0, ffs1 = [], []
+# f = open("wislicka0.txt", "w")
+for _ in range(1000):
+    ff0 = fitness_function([14, 10, 13, 1, 7, 4, 1, 19, 4, 12, 1, 5, 12])
+    ff1 = fitness_function([17, 5, 12, 15, 17, 11, 8, 14, 9, 6, 9, 6, 13])
+    print ff0, ff1
+    ffs0.append(ff0)
+    ffs1.append(ff1)
+#     f.write(str(ff) + '\n')
+# f.close()
+
+from matplotlib import pyplot as plt
+from scipy import stats
+import numpy as np
+
+m0, s0 = stats.norm.fit(ffs0)
+m1, s1 = stats.norm.fit(ffs1)
+print
+print m0, m1
+plt.hist(ffs0, density=True)
+plt.hist(ffs1, density=True)
+
+xt = plt.xticks()[0]
+xmin, xmax = min(min(ffs0), min(ffs1)), max(max(ffs0), max(ffs1))
+lnspc = np.linspace(xmin, xmax, len(ffs0))
+plt.plot(lnspc, stats.norm.pdf(lnspc, m0, s0), label='Initial configuration')
+plt.plot(lnspc, stats.norm.pdf(lnspc, m1, s1), label='Optimized configuration')
+
+plt.legend()
+plt.xlabel('Total waiting time [min.]')
+plt.ylabel('Density function [-]')
+
+plt.show()
