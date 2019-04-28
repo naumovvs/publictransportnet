@@ -64,8 +64,8 @@ m0, s0 = stats.norm.fit(ffs0)
 m1, s1 = stats.norm.fit(ffs1)
 print
 print m0, m1
-plt.hist(ffs0, density=True)
-plt.hist(ffs1, density=True)
+plt.hist(ffs0, bins=30, density=True)
+plt.hist(ffs1, bins=30, density=True)
 
 xt = plt.xticks()[0]
 xmin, xmax = min(min(ffs0), min(ffs1)), max(max(ffs0), max(ffs1))
