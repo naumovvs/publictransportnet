@@ -3,7 +3,7 @@ class Line:
         Public transport line
     """
 
-    def __init__(self, net, codes, end_codes):
+    def __init__(self, net, codes, end_codes=[]):
         # route configuration
         self.net = net
         self.nodes = []
@@ -35,6 +35,12 @@ class Line:
             self.end_stops = [self.net.get_node(end_codes[0]), self.net.get_node(end_codes[-1])]
         # mean velocity of buses at the line [km/h]
         self.velocity = 25
+
+    def __str__(self):
+        res = 'Line: '
+        for nd in self.nodes:
+            res += str(nd.code) + ' '
+        return res
 
     @property
     def line_length(self):
@@ -101,7 +107,7 @@ class Line:
             Defines the line schedule
         """
         interval = round(self.turnaround_time / len(self.vehicles), 0)
-        self.define_sequence(self.turns_number, same_trace=False)  # not the same trace in back direction
+        self.define_sequence(self.turns_number, same_trace=True)  # the same trace in back direction
         t0 = self.schedule_shift
         for vhcl in self.vehicles:
             # defining start parameters of the vehicle's schedule
@@ -118,8 +124,9 @@ class Line:
                     st += self.end_stop_duration
                 else:
                     st += self.intermediate_stop_duration
-                st += round(60 * self.net.get_link(self.nodes_sequence[idx - 1],
-                                                   self.nodes_sequence[idx]).weight / self.velocity, 0)
+                lnk = self.net.get_link(self.nodes_sequence[idx - 1],
+                                        self.nodes_sequence[idx])
+                st += round(60 * lnk.weight / self.velocity, 0)
                 vhcl.schedule.append((st, self.nodes_sequence[idx]))
             # time shift for the next vehicle
             t0 += interval
@@ -145,4 +152,3 @@ class Line:
     def reset(self):
         self.nodes_sequence = []
         self.schedule_shift = 0
-

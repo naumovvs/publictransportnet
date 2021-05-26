@@ -54,8 +54,8 @@ class Net:
 
     def contains_link(self, out_node, in_node):
         """ Checks if the net contains a link """
-        for l in self.links:
-            if l.out_node is out_node and l.in_node is in_node:
+        for lnk in self.links:
+            if lnk.out_node is out_node and lnk.in_node is in_node:
                 return True
         return False
 
@@ -367,21 +367,22 @@ class Net:
 
     def print_od_matrix(self):
         od = self.od_matrix
-        print "OD\t",
+        res = 'OD\t'
         for nd in self.nodes:
-            print "{0}\t".format(nd.code),
-        print
+            res += str(nd.code) + '\t'
+        res += '\n'
         for origin in self.nodes:
-            print "{0}\t".format(origin.code),
+            res += str(origin.code) + '\t'
             for destination in self.nodes:
-                print "{0}\t".format(od[(origin.code, destination.code)]),
-            print
+                res += str(od[(origin.code, destination.code)]) + '\t'
+            res += '\n'
+        print(res)
 
     def simulate(self, duration=8*60, time_step=1):
         """ Simulation of the transport network """
         self.duration = duration
         # demand generation
-        # self.gen_demand(self.duration, is_stochastic=False)
+        self.gen_demand(self.duration, is_stochastic=True)
         # show demand
         # for nd in self.nodes:
         #     print
@@ -456,10 +457,10 @@ class Net:
 
     def print_characteristics(self):
         """" Print out network parameters """
-        print "Links list:"
+        print("Links list:")
         for lnk in self.links:
-            print "{0} - {1}: {2}".format(lnk.out_node.code, lnk.in_node.code, round(lnk.weight, 2))
-        print "Lines list:"
+            print("{0} - {1}: {2}".format(lnk.out_node.code, lnk.in_node.code, round(lnk.weight, 2)))
+        print("Lines list:")
         for ln in self.lines:
-            print ln.trace_string, round(ln.line_length, 2)
+            print(ln.trace_string, round(ln.line_length, 2))
 

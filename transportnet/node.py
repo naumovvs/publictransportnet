@@ -6,7 +6,7 @@ class Node:
 
     def __init__(self, code=0, name=""):
         self.code = code
-        if name is "":
+        if name == "":
             self.name = "Node" + str(code)
         else:
             self.name = name

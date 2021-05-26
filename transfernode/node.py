@@ -64,7 +64,7 @@ class Node:
                     #     print tm, ln.name, p.next_line.name
                     # else:
                     #     print tm, ln.name, "end"
-                    # self.out_psgs.append(p)
+                    self.out_psgs.append(p)
 
     def simulate(self, duration=90):
         wait_time = 0

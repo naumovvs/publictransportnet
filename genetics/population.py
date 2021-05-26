@@ -36,8 +36,7 @@ class Population:
             survivors = ranked_items[:survivors_number]
             # print out the winner
             winner = survivors[0].decode(), estimates[0][0]
-            #print "winner", _ + 1, winner[0], winner[1]
-            print winner[1], winner[0]
+            print "winner", _ + 1, winner[0], winner[1]
             # reproduction
             self.chromosomes = []
             while len(self.chromosomes) < self.size:

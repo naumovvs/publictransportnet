@@ -75,22 +75,24 @@ n.get_node(21).name = "Rondo Ofiar Katynia"
 n.get_node(22).name = "Chelmonskiego Osiedle"
 n.get_node(23).name = "Stawowa"
 # set matrices of passengers' arrival and depature at the bus stops
-f_direct_in = file('s-ch_in.txt')
+f_direct_in = open('s-ch_in.txt')
 lns_direct_in = f_direct_in.readlines()
 f_direct_in.close()
-f_back_in = file('ch-s_in.txt')
+f_back_in = open('ch-s_in.txt')
 lns_back_in = f_back_in.readlines()
 f_back_in.close()
-f_direct_out = file('s-ch_out.txt')
+f_direct_out = open('s-ch_out.txt')
 lns_direct_out = f_direct_out.readlines()
 f_direct_out.close()
-f_back_out = file('ch-s_out.txt')
+f_back_out = open('ch-s_out.txt')
 lns_back_out = f_back_out.readlines()
 f_back_out.close()
+#print(lns_direct_in)
 # matrix of passengers' departure from the bus stops in main direction
 ps_direct_in = []
 for ln in lns_direct_in:
     ps_direct_in.append([int(el) for el in ln.split('\t')])
+#print(ps_direct_in)
 # matrix of passengers' departure from the bus stops in back direction
 ps_back_in = []
 for ln in lns_back_in:
@@ -129,7 +131,7 @@ for veh_num in range(1, 2, 1):
         # add tne line #501 to the net
         n.lines.append(line501)
         n.simulate(duration=18*60)
-        print veh_num, n.total_wait_time
+        print(veh_num, n.total_wait_time)
 #n.gen_demand(duration=18*60, is_stochastic=False)
 # for nd in n.nodes:
 #     print nd.direct_out, nd.back_out

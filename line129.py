@@ -7,7 +7,7 @@ num_runs = 5
 veh_capacity = 42 + 98
 for veh_num in range(5, 10 + 1, 1):
     for velocity in range(20, 40+2, 2):
-        for stop_dur in range(30, 180 + 30, 30): #[sec]
+        for stop_dur in range(30, 180 + 30, 30):  # [sec]
             wait_coef = 0
             for _ in range(num_runs):
                 n = net.Net()
@@ -80,13 +80,13 @@ for veh_num in range(5, 10 + 1, 1):
                 # add vehicles operating at the line #129
                 line129.add_vehicles([vehicle.Vehicle(veh_capacity) for __ in range(veh_num)])
                 line129.velocity = velocity
-                line129.intermediate_stop_duration = 1.0*stop_dur/60 #[min]
+                line129.intermediate_stop_duration = 1.0*stop_dur/60  # [min]
                 # add tne line #129 to the net
                 n.lines.append(line129)
                 # simulate the line operation
                 n.simulate(duration=18*60)
                 # print out characteristics of the net
-                n.print_characteristics()
-                n.print_od_matrix()
+                # n.print_characteristics()
+                # n.print_od_matrix()
                 wait_coef += 1.0 * n.total_wait_time / n.duration
-            print veh_num, velocity, stop_dur, wait_coef / num_runs
+            print(veh_num, velocity, stop_dur, wait_coef / num_runs)
