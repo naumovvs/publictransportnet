@@ -1,5 +1,6 @@
 import random
 import numpy as np
+import threading as th
 from stochastic import stochastic
 from transportnet import line
 from transportnet import link
@@ -8,7 +9,9 @@ from transportnet import passenger
 
 
 class Net:
-    """ Net as the graph model """
+    """
+        Net as the graph model
+    """
 
     def __init__(self):
         # network model time
@@ -39,21 +42,27 @@ class Net:
         return transfers
 
     def contains_node(self, node_code):
-        """" Determines if the network contains a node with the specified code """
+        """"
+            Determines if the network contains a node with the specified code
+        """
         for n in self.nodes:
             if n.code == node_code:
                 return True
         return False
 
     def get_node(self, code):
-        """" Returns the first found node with the specified code """
+        """"
+            Returns the first found node with the specified code
+        """
         for n in self.nodes:
             if n.code == code:
                 return n
         return None
 
     def contains_link(self, out_node, in_node):
-        """ Checks if the net contains a link """
+        """
+            Checks if the net contains a link
+        """
         for lnk in self.links:
             if lnk.out_node is out_node and lnk.in_node is in_node:
                 return True
@@ -67,7 +76,9 @@ class Net:
         return None
 
     def add_link(self, out_code, in_code, weight=0, directed=False):
-        """" Adds a link with the specified characteristics """
+        """
+            Adds a link with the specified characteristics
+        """
         if self.contains_node(out_code):
             # out-node is already in the net
             out_node = self.get_node(out_code)
@@ -257,7 +268,7 @@ class Net:
         return destinations[1:]
 
     def gen_demand(self, duration, is_stochastic=True):
-        """"
+        """
             Generates demand for trips in the network
             duration - duration of the simulation period, min.
         """
@@ -379,7 +390,12 @@ class Net:
         print(res)
 
     def simulate(self, duration=8*60, time_step=1):
-        """ Simulation of the transport network """
+        """
+            Simulation of the transport network
+        """
+        # seed stochastic
+        random.seed(th.current_thread().native_id)
+
         self.duration = duration
         # demand generation
         self.gen_demand(self.duration, is_stochastic=True)
@@ -413,6 +429,7 @@ class Net:
             self.time += time_step
         # printing out simulation results
         self.total_wait_time = 0
+        serviced_wait_time = 0
         self.num_serviced_passengers = 0
         self.sum_vehicles_time = 0
         for ln in self.lines:
@@ -431,10 +448,11 @@ class Net:
             if len(ps.used_vehicles) > 0:
                 self.num_serviced_passengers += 1
                 self.total_wait_time += ps.wait_time
+                serviced_wait_time += ps.wait_time
             else:
                 unserviced_passengers_number += 1
                 self.total_wait_time += self.duration - ps.m_appearance
-        return self.total_wait_time, len(self.demand), self.num_serviced_passengers
+        return serviced_wait_time / self.num_serviced_passengers, self.total_wait_time / len(self.demand), len(self.demand), self.num_serviced_passengers
 
     def reset(self):
         # reset resulting parameters of simulations

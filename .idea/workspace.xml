@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="abd01658-83f8-4a56-be63-6d1cb2793ba6" name="Default" comment="'tram line 2 added'" />
+    <list default="true" id="abd01658-83f8-4a56-be63-6d1cb2793ba6" name="Default" comment="'tram line 2 added'">
+      <change afterPath="$PROJECT_DIR$/line198w.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ulanska-wesola-in.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ulanska-wesola-out.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wesola-ulanska-in.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wesola-ulanska-out.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/publictransportnet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/publictransportnet.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genetics/population.py" beforeDir="false" afterPath="$PROJECT_DIR$/genetics/population.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/line2.py" beforeDir="false" afterPath="$PROJECT_DIR$/line2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wislicka_transfer.py" beforeDir="false" afterPath="$PROJECT_DIR$/wislicka_transfer.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +60,15 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/transfernode/passenger.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/genetics/chromosome.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/transfernode/line.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/transfernode/node.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/genetics/population.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/genetics/ga.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/wislicka_transfer.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -142,14 +162,15 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../current projects/samat/samat_routing" />
     <property name="nodejs_interpreter_path" value="node" />
-    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +188,7 @@
       <recent name="C:\Users\nau\PycharmProjects\publictransportnet\stochastic" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.line129">
+  <component name="RunManager" selected="Python.line198">
     <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -279,7 +300,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="line129" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="line198" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="publictransportnet" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -292,7 +313,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/line129.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/line198w.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -413,12 +434,12 @@
     </configuration>
     <list>
       <item itemvalue="Python.wislicka_transfer" />
-      <item itemvalue="Python.line129" />
+      <item itemvalue="Python.line198" />
       <item itemvalue="Python.ga_schedule" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.line129" />
+        <item itemvalue="Python.line198" />
         <item itemvalue="Python.ga_schedule" />
       </list>
     </recent_temporary>
@@ -436,6 +457,14 @@
       <updated>1464780332010</updated>
       <workItem from="1621499488803" duration="6947000" />
       <workItem from="1622021875328" duration="1616000" />
+      <workItem from="1622024249621" duration="1198000" />
+      <workItem from="1623837481299" duration="4966000" />
+      <workItem from="1628697545010" duration="777000" />
+      <workItem from="1629110462289" duration="2949000" />
+      <workItem from="1629113993489" duration="492000" />
+      <workItem from="1629302911855" duration="267000" />
+      <workItem from="1642510679128" duration="2146000" />
+      <workItem from="1662989199033" duration="46000" />
     </task>
     <servers />
   </component>
@@ -472,6 +501,18 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
@@ -481,7 +522,8 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/publictransportnet$line129.coverage" NAME="line129 Coverage Results" MODIFIED="1622022273823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/publictransportnet$line198.coverage" NAME="line198 Coverage Results" MODIFIED="1629112953403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/publictransportnet$line129.coverage" NAME="line2 Coverage Results" MODIFIED="1623918982217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/publictransportnet$run_experiment.coverage" NAME="line129 Coverage Results" MODIFIED="1621533103412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">

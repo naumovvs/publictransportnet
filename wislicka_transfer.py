@@ -18,7 +18,7 @@ line501 = line.Line(12, 15, stochastic.Stochastic(1, 3.47, 1.61), 0.1442, "501")
 line502 = line.Line(1, 10, stochastic.Stochastic(1, 4.75, 2.03), 0.2569, "502")
 line511 = line.Line(5, 15, stochastic.Stochastic(1, 5.11, 2.05), 0.1113, "511")
 line572 = line.Line(12, 20, stochastic.Stochastic(1, 2.96, 1.49), 0.1060, "572")
-wislicka.origin_pass_number = 402 #[pas./h]
+wislicka.origin_pass_number = 402  # [pas./h]
 wislicka.lines = [line125, line129, line132, line138, line152, line159, line172,
                   line192, line429, line501, line502, line511, line572]
 
@@ -39,7 +39,7 @@ g.generations = 30
 g.fitness_function = fitness_function
 winner = g.run()
 for w in winner[0]:
-    print str(w),
-print winner[1]
+    print (str(w),)
+print (winner[1])
 
-print fitness_function([14, 10, 13, 1, 7, 4, 1, 19, 4, 12, 1, 5, 12])
+print (fitness_function([14, 10, 13, 1, 7, 4, 1, 19, 4, 12, 1, 5, 12]))

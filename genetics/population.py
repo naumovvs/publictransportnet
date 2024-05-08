@@ -1,9 +1,11 @@
-from chromosome import Chromosome
+from genetics.chromosome import Chromosome
 import random
 
 
 class Population:
-    """ population of chromosomes """
+    """
+    population of chromosomes
+    """
 
     def __init__(self):
         self.size = 50
@@ -25,20 +27,20 @@ class Population:
 
     def evolve(self, generations=100):
         winner = (None, 0)
-        for _ in range(generations):
+        survivors_number = int(round(self.size * self.survivors_rate))
+        for g in range(generations):
             # evaluation
             estimates = [(c.evaluate(self.fitness_function), c)
                          for c in self.chromosomes]
             # ranking selection
-            estimates.sort(reverse=self.maximize)
+            estimates.sort(key=lambda e: e[0][0], reverse=self.maximize)
             ranked_items = [item[1] for item in estimates]
-            survivors_number = int(round(self.size * self.survivors_rate))
             survivors = ranked_items[:survivors_number]
             # print out the winner
             winner = survivors[0].decode(), estimates[0][0]
-            print "winner", _ + 1, winner[0], winner[1]
+            print("winner", g + 1, winner[0], winner[1])
             # reproduction
-            self.chromosomes = []
+            self.chromosomes = survivors # []
             while len(self.chromosomes) < self.size:
                 parent1 = survivors[random.randint(0, survivors_number - 1)]
                 parent2 = survivors[random.randint(0, survivors_number - 1)]
@@ -51,5 +53,5 @@ class Population:
 
     def printout(self):
         for c in self.chromosomes:
-            print c.genes, c.decode()
+            print(c.genes, c.decode())
 

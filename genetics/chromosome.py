@@ -2,7 +2,9 @@ import random
 
 
 class Chromosome:
-    """ genotype representation """
+    """
+        genotype representation
+    """
 
     def __init__(self, size=(8, 8), code=None):
         self.size = size
@@ -24,14 +26,18 @@ class Chromosome:
         return fitness_function(self.decode())
 
     def mutate(self, prob=0.05, turns=1):
-        """ mutation """
+        """
+            mutation operator
+        """
         for item in range(turns):
             if random.random() < prob:
                 gene_to_change = random.randint(0, self.length - 1)
                 self.genes[gene_to_change] = (self.genes[gene_to_change] + 1) % 2
 
     def replicate(self, another, prob=0.25):
-        """ crossover """
+        """
+            crossover operator
+        """
         code = self.genes[:]
         if random.random() < prob:
             part = random.randint(1, self.length - 2)

@@ -3,7 +3,9 @@ import random
 
 
 class Stochastic:
-    """" Stochastic variable """
+    """
+        Stochastic variable
+    """
 
     def __init__(self, law=0, location=0, scale=1, shape=0):
         # distribution law
@@ -16,7 +18,9 @@ class Stochastic:
         self.shape = shape
 
     def get_value(self):
-        """" Returns the generated value """
+        """"
+            Returns the generated value
+        """
         if self.law == 0:
             # rectangular distribution
             return random.uniform(self.location, self.location + self.scale)
@@ -28,7 +32,7 @@ class Stochastic:
             r = random.random()
             while r == 0 or r == 1:
                 r = random.random()
-            return -self.scale*math.log(r)
+            return -self.scale * math.log(r)
         else:
             # rectangular distribution by default
             return random.uniform(self.location, self.location + self.scale)

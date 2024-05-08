@@ -40,7 +40,7 @@ class Line:
         res = 'Line: '
         for nd in self.nodes:
             res += str(nd.code) + ' '
-        return res
+        return res[:-1]
 
     @property
     def line_length(self):
@@ -66,19 +66,25 @@ class Line:
 
     @property
     def turnaround_time(self):
-        """" Returns the line turnaround duration [min] """
+        """
+            Returns the line turnaround duration [min]
+        """
         return 60 * self.line_length / self.velocity + \
                self.intermediate_stop_duration * (len(self.nodes) - 2) + \
                2 * self.end_stop_duration
 
     @property
     def turns_number(self):
-        """" Returns the possible number of turns during the simulation period """
+        """
+            Returns the possible number of turns during the simulation period
+        """
         return int(self.net.duration / self.turnaround_time) + 1
 
     @property
     def nodes_reversed(self):
-        """" Returns the list of the line stops (their codes) in the reversed order """
+        """
+            Returns the list of the line stops (their codes) in the reversed order
+        """
         nds = []
         for i in range(len(self.nodes) - 1, -1, -1):
             nds.append(self.nodes[i])
@@ -86,7 +92,7 @@ class Line:
 
     def define_sequence(self, turns, same_trace=True):
         """
-        returns the sequence of nodes passed by vehicles during the simulation period
+            Returns the sequence of nodes passed by vehicles during the simulation period
         """
         nds = []
         nds.extend(self.nodes[:-1])
@@ -133,7 +139,7 @@ class Line:
 
     def add_vehicles(self, vehicles):
         """
-        Adds vehicles to run on the line
+            Adds vehicles to run on the line
         """
         for vehicle in vehicles:
             vehicle.line = self
@@ -144,7 +150,7 @@ class Line:
 
     def run(self):
         """
-        Runs the process of line simulation
+            Runs the process of line simulation
         """
         for vhcl in self.vehicles:
             vhcl.move()

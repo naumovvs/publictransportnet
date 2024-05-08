@@ -1,5 +1,5 @@
-from chromosome import Chromosome
-from population import Population
+# from chromosome import Chromosome
+from genetics.population import Population
 
 
 class GA:
