@@ -11,7 +11,7 @@ model_runs = 10
 sim_time = 4.0 * 60
 nets = []
 
-res_file = open('verkhnodniprovsk_exp0.txt', 'w')
+res_file = open('verkhnodniprovsk_exp2.txt', 'w')
 
 for _ in range(nthreads):
     n = net.Net()
@@ -22,7 +22,6 @@ for _ in range(nthreads):
         nd.s_interval = stochastic.Stochastic(law=2, scale=15)
     central = n.get_node(code=1)
     central.s_interval = stochastic.Stochastic(law=2, scale=5)
-
     # define a set of public transport lines
     line1 = line.Line(n, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
                         13, 12, 11, 15, 16, 17, 18, 19, 1], 
@@ -32,27 +31,23 @@ for _ in range(nthreads):
     line2 = line.Line(n, [1, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 18, 31, 32, 16, 18, 1],
                         [1, 1])
     line2.add_vehicles([vehicle.Vehicle(50)])
-
     line3 = line.Line(n, [1, 20, 33, 34, 35, 36, 37, 38,
                         37, 39, 36, 35, 18, 19, 1],
                         [1, 38])
     line3.add_vehicles([vehicle.Vehicle(18)])
-
     line4 = line.Line(n, [1, 3, 18, 40, 41, 42, 43, 44,
                         43, 42, 41, 40, 18, 3, 1],
                         [1, 44])
     line4.add_vehicles([vehicle.Vehicle(38)])
-
     line5 = line.Line(n, [1, 3, 18, 40, 41, 42, 45, 46, 47,
                         46, 45, 42, 41, 40, 18, 3, 1],
                         [1, 47])
     line5.add_vehicles([vehicle.Vehicle(38)])
-
     n.lines.extend([line1, line2, line3, line4, line5])
-
+    # add to the collection of nets
     nets.append(n)
 
-for iter in range(100):
+for iter in range(30):
    
     # s_mean_interval = stochastic.Stochastic(law=0, location=1, scale=4)
     # for nd in n.nodes:
@@ -105,7 +100,7 @@ for iter in range(100):
     g = ga.GA()
     # 7 bits per a time shift value: in range between 0 and 127
     g.chromosome_size = len(n.lines), 7
-    g.population_size = 50
+    g.population_size = 30
     g.generations = 20
     g.fitness_function = fitness_function
     

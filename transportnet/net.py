@@ -394,7 +394,7 @@ class Net:
             Simulation of the transport network
         """
         # seed stochastic
-        random.seed(th.current_thread().native_id)
+        # random.seed(th.current_thread().native_id)
 
         self.duration = duration
         # demand generation
