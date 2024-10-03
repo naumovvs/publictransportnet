@@ -29,7 +29,7 @@ class Chromosome:
         """
             mutation operator
         """
-        for item in range(turns):
+        for _ in range(turns):
             if random.random() < prob:
                 gene_to_change = random.randint(0, self.length - 1)
                 self.genes[gene_to_change] = (self.genes[gene_to_change] + 1) % 2

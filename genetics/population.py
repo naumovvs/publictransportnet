@@ -33,11 +33,11 @@ class Population:
             estimates = [(c.evaluate(self.fitness_function), c)
                          for c in self.chromosomes]
             # ranking selection
-            estimates.sort(key=lambda e: e[0][0], reverse=self.maximize)
+            estimates.sort(key=lambda e: e[0], reverse=self.maximize) # e[0][0]
             ranked_items = [item[1] for item in estimates]
             survivors = ranked_items[:survivors_number]
             # print out the winner
-            winner = survivors[0].decode(), estimates[0][0]
+            winner = survivors[0].decode(), estimates[0] # estimates[0][0]
             print("winner", g + 1, winner[0], winner[1])
             # reproduction
             self.chromosomes = survivors # []

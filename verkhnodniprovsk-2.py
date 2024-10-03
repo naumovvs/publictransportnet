@@ -44,7 +44,7 @@ data = pd.read_csv('verkhnodniprovsk-best.csv', delimiter='\t', header=None)
 schedules = []
 for d in range(10):
     schedules.append([data[1][d], data[2][d], data[3][d], data[4][d], data[5][d]])
-# schedules = [[12, 4, 8, 26, 5]]
+schedules = [[75, 90, 30, 95, 0]]
 
 def fitness_function(shifts):
     n.reset()
@@ -54,7 +54,7 @@ def fitness_function(shifts):
 
 for schedule in schedules:
     print(schedule)
-    res_file = open('./verkhnodniprovsk/' + str(schedule) + '+w.txt', 'w')
+    res_file = open('./verkhnodniprovsk/' + str(schedule) + '+B.txt', 'w')
     for _ in range(model_runs):
         res_str = ''
         for res in fitness_function(schedule):
