@@ -1,3 +1,6 @@
+import sys
+sys.path.append(".")
+
 from transfernode import node
 from transfernode import line
 from stochastic import stochastic
@@ -16,7 +19,7 @@ line5 = line.Line(14, 26, stochastic.Stochastic(1, 4, 0.5), 0.10, "#5")
 avtovokzal.origin_pass_number = 250  # [pas./h]
 avtovokzal.lines = [line1, line2, line3, line4, line5]
 
-nd, dur, N = avtovokzal, 180, 100
+nd, dur, N = avtovokzal, 180, 30
 
 def fitness_function(shifts):
     for idx in range(len(nd.lines)):
@@ -26,19 +29,19 @@ def fitness_function(shifts):
         res += nd.simulate(duration=dur)
     return res / N
 
-# g = ga.GA()
-# # 7 bits per a time shift value: in range between 0 and 127
-# g.chromosome_size = len(avtovokzal.lines), 7
-# g.population_size = 100
-# g.generations = 30
-# g.fitness_function = fitness_function
-# winner = g.run()
-# print (fitness_function(winner[0]))
+g = ga.GA()
+# 7 bits per a time shift value: in range between 0 and 127
+g.chromosome_size = len(avtovokzal.lines), 7
+g.population_size = 100
+g.generations = 30
+g.fitness_function = fitness_function
+winner = g.run()
+print (fitness_function(winner[0]))
 
-f = open('avtovokzal_results.csv', 'w')
-for _ in range(300):
-    f.write(f'{fitness_function([22, 17, 9, 18, 11])}\t{fitness_function([20, 0, 0, 5, 14])}\n')
-f.close()
+# f = open('avtovokzal_results.csv', 'w')
+# for _ in range(300):
+#     f.write(f'{fitness_function([22, 17, 9, 18, 11])}\t{fitness_function([20, 0, 0, 5, 14])}\n')
+# f.close()
 
 # print (fitness_function([21, 19, 8, 22, 12]))
 # # from 5:00

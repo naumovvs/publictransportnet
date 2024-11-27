@@ -1,3 +1,6 @@
+import sys
+sys.path.append(".")
+
 from stochastic import stochastic
 from transportnet import line
 from transportnet import net

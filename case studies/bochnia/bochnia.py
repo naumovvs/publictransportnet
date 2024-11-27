@@ -1,3 +1,6 @@
+import sys
+sys.path.append(".")
+
 from transportnet import net
 from transportnet import line
 from transportnet import vehicle
@@ -6,10 +9,10 @@ from genetics import ga
 
 
 sim_time = 1.0 * 60
-res_file = open('results.txt', 'w')
+# res_file = open('results.txt', 'w')
 n = net.Net()
 # define the network configuration
-n.load_from_file('bochnia_net.txt')
+n.load_from_file('./case studies/bochnia/bochnia_net.txt')
 # define a set of public transport lines
 bochnia_lines = [line.Line(n, [27, 28, 39, 18, 23, 26, 15, 31, 32,
                                31, 15, 26, 23, 18, 35, 25, 27], [27, 32]),
@@ -145,10 +148,10 @@ for sn in range(100):
     #     res_file.write(str(w) + '\t')
 
     for res in fitness_function([5, 8, 0, 1]):
-        print res,
-        res_file.write(str(res) + '\t')
-    res_file.write('\n')
-    print
+        print(res)
+    #     res_file.write(str(res) + '\t')
+    # res_file.write('\n')
+    print()
 
-res_file.close()
+# res_file.close()
 

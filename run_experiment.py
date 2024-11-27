@@ -1,14 +1,6 @@
-#import wx
 from stochastic import stochastic
 from transportnet import line, vehicle
 from transportnet import net
-
-# Create a new app, don't redirect stdout/stderr to a window
-#app = wx.App(False)
-# A Frame is a top-level window
-#frame = wx.Frame(None, wx.ID_ANY, "Simulation of the public transport network")
-# Show the frame
-#frame.Show(True)
 
 res_file = open("res_full_wait.txt", 'w')
 
@@ -57,8 +49,8 @@ for veh_number in range(1, 9+2, 2):
                         n.simulate()
                         mean_twt += n.total_wait_time
                         twt.append(n.total_wait_time)
-                        print "{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t"\
-                            .format(veh_number, mean_int, stops_number, mean_dist, capacity, n.total_wait_time)
+                        print("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t"\
+                            .format(veh_number, mean_int, stops_number, mean_dist, capacity, n.total_wait_time))
                         res_file.write("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\n"
                                        .format(veh_number, mean_int, stops_number, mean_dist, capacity,
                                                n.total_wait_time)

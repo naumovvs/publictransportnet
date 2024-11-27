@@ -1,8 +1,9 @@
+import sys
+sys.path.append(".")
+
 from transportnet import line
 from transportnet import net
 from transportnet import vehicle
-
-#import matplotlib.pyplot as plt
 
 
 n = net.Net()

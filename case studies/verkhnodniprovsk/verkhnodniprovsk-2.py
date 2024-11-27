@@ -1,3 +1,6 @@
+import sys
+sys.path.append(".")
+
 from transportnet import net
 from transportnet import line
 from transportnet import vehicle

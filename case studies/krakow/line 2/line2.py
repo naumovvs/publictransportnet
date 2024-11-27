@@ -1,3 +1,6 @@
+import sys
+sys.path.append(".")
+
 from stochastic import stochastic
 from transportnet import line
 from transportnet import net
@@ -5,7 +8,7 @@ from transportnet import vehicle
 
 num_runs = 5
 veh_capacity = 180
-res_file = open('line2.txt', 'w')
+res_file = open('./case studies/krakow/line 2/line2.txt', 'w')
 for veh_num in range(2, 8 + 1, 1):
     for velocity in range(20, 30+2, 2):
         for stop_dur in range(10, 60 + 10, 10):  # [sec]
@@ -56,16 +59,16 @@ for veh_num in range(2, 8 + 1, 1):
                 n.get_node(13).name = "Salwator"
 
                 # set matrices of passengers' arrival and depature at the bus stops
-                f_direct_in = open('cmentarz-salwator-in.txt')
+                f_direct_in = open('./case studies/krakow/line 2/cmentarz-salwator-in.txt')
                 lns_direct_in = f_direct_in.readlines()
                 f_direct_in.close()
-                f_back_in = open('salwator-cmentarz-in.txt')
+                f_back_in = open('./case studies/krakow/line 2/salwator-cmentarz-in.txt')
                 lns_back_in = f_back_in.readlines()
                 f_back_in.close()
-                f_direct_out = open('cmentarz-salwator-out.txt')
+                f_direct_out = open('./case studies/krakow/line 2/cmentarz-salwator-out.txt')
                 lns_direct_out = f_direct_out.readlines()
                 f_direct_out.close()
-                f_back_out = open('salwator-cmentarz-out.txt')
+                f_back_out = open('./case studies/krakow/line 2/salwator-cmentarz-out.txt')
                 lns_back_out = f_back_out.readlines()
                 f_back_out.close()
                 # print(lns_direct_in)

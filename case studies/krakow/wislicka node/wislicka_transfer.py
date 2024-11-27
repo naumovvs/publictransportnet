@@ -1,3 +1,7 @@
+import sys
+sys.path.append(".")
+
+
 from transfernode import node
 from transfernode import line
 from stochastic import stochastic
