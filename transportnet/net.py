@@ -1,6 +1,6 @@
 import random
 import numpy as np
-import threading as th
+# import threading as th
 from stochastic import stochastic
 from transportnet import line
 from transportnet import link
@@ -16,7 +16,7 @@ class Net:
     def __init__(self):
         # network model time
         self.time = 0
-        # duration of the network simulation [min]
+        # duration of the network simulation [minutes]
         self.duration = 0
         # network geography
         self.nodes = []
@@ -24,10 +24,18 @@ class Net:
         self.lines = []
         # transport demand
         self.demand = []
-        # resulting characteristics
-        self.total_wait_time = 0
-        self.sum_vehicles_time = 0
-        self.num_serviced_passengers = 0
+
+    @property
+    def total_wait_time(self):
+        return sum([p.wait_time for p in self.demand])
+
+    @property
+    def sum_vehicles_time(self):
+        sum_vehicles_time = 0
+        for ln in self.lines:
+            for v in ln.vehicles:
+                sum_vehicles_time += v.schedule[-1][0] - v.schedule[0][0]
+        return sum_vehicles_time
 
     @property
     def transfer_nodes(self):
@@ -75,7 +83,7 @@ class Net:
                 return lnk
         return None
 
-    def add_link(self, out_code, in_code, weight=0, directed=False):
+    def add_link(self, out_code, in_code, weight=0, directed=False, track=[]):
         """
             Adds a link with the specified characteristics
         """
@@ -87,10 +95,13 @@ class Net:
                 in_node = self.get_node(in_code)
                 if self.contains_link(out_node, in_node):
                     # out-node and in-node are already linked: change the link weight
-                    self.get_link(out_node, in_node).weight = weight
+                    lnk = self.get_link(out_node, in_node)
+                    lnk.weight = weight
+                    lnk.track = track
                 else:
                     # there is no such a link in the net: add a new one
                     new_link = link.Link(out_node, in_node, weight)
+                    new_link.track = track
                     out_node.out_links.append(new_link)
                     in_node.in_links.append(new_link)
                     self.links.append(new_link)
@@ -98,6 +109,7 @@ class Net:
                 # the net contains the specified out-node, but there is no in-node with the specified code
                 in_node = node.Node(in_code)
                 new_link = link.Link(out_node, in_node, weight)
+                new_link.track = track
                 out_node.out_links.append(new_link)
                 in_node.in_links.append(new_link)
                 self.nodes.append(in_node)
@@ -114,13 +126,14 @@ class Net:
                 self.nodes.append(in_node)
             # create new link
             new_link = link.Link(out_node, in_node, weight)
+            new_link.track = track
             out_node.out_links.append(new_link)
             in_node.in_links.append(new_link)
             self.nodes.append(out_node)
             self.links.append(new_link)
         # add the reverse link
         if not directed:
-            self.add_link(in_code, out_code, weight, True)
+            self.add_link(in_code, out_code, weight, True, track[::-1])
         # sort the nodes (is useful for calculating the short distances matrix)
         # self.nodes.sort()
 
@@ -275,12 +288,10 @@ class Net:
         self.demand = []
         if is_stochastic:
             for source in self.nodes:
-                time = 0
+                time = round(source.s_interval.get_value(), 1)
                 while time <= duration:
-                    interval = round(source.s_interval.get_value(), 1)
-                    time += interval
                     # generating a new passenger
-                    new_passenger = passenger.Passenger()
+                    new_passenger = passenger.Passenger(net=self)
                     new_passenger.m_appearance = time
                     new_passenger.origin_node = source
                     # defining the target node - random choice rule (can't be the same as origin node)
@@ -288,24 +299,23 @@ class Net:
                     while target == source:
                         target = random.choice(self.nodes)
                     new_passenger.destination_nodes = self.define_destinations(source, target)
-                    # print [new_passenger.origin_node.code] + [nd.code for nd in new_passenger.destination_nodes]
-                    new_passenger.m_boarding = [0 for _ in range(new_passenger.transits_number + 1)]
-                    new_passenger.m_disembarkation = [0 for _ in range(new_passenger.transits_number + 1)]
-                    new_passenger.current_destination_node = new_passenger.destination_nodes[0]
+                    # print(time, [new_passenger.origin_node.code] + [nd.code for nd in new_passenger.destination_nodes])
+                    new_passenger.reset() # set initial values of boarding and disembarkation times
                     # adding the passenger to the origin node collection
                     source.pass_out.append(new_passenger)
                     self.demand.append(new_passenger)
+                    time += round(source.s_interval.get_value(), 1)
         else:
-            #
+            # for simulations based on the defined demand (1 hour duration!)
             for nd in self.nodes:
                 time = 0
                 for din in nd.direct_in:
                     if din > 0:
                         st = stochastic.Stochastic(law=2, scale=60.0 / din)
                         t = st.get_value()
-                        while t <= 60:
+                        while t <= 60: # 1 hour duration only!?
                             t += st.get_value()
-                            new_passenger = passenger.Passenger()
+                            new_passenger = passenger.Passenger(net=self)
                             new_passenger.m_appearance = time + t
                             new_passenger.origin_node = nd
                             destination_node = random.choice(self.nodes)
@@ -339,7 +349,7 @@ class Net:
                         t = st.get_value()
                         while t <= 60:
                             t += st.get_value()
-                            new_passenger = passenger.Passenger()
+                            new_passenger = passenger.Passenger(net=self)
                             new_passenger.m_appearance = time + t
                             new_passenger.origin_node = nd
                             destination_node = random.choice(self.nodes)
@@ -393,66 +403,33 @@ class Net:
         """
             Simulation of the transport network
         """
-        # seed stochastic
-        # random.seed(th.current_thread().native_id)
-
         self.duration = duration
-        # demand generation
-        self.gen_demand(self.duration, is_stochastic=True)
-        # show demand
-        # for nd in self.nodes:
-        #     print
-        #     print "node {0} demand interval is {1} min.".format(nd.code, nd.s_interval.scale)
-        #     pn = 0
-        #     for psgr in nd.pass_out:
-        #         if psgr.m_appearance > self.duration: self.duration = psgr.m_appearance
-        #         pn += 1
-        #         print "psgr #{0} app. time is {1} min., from {2} to {3}".format(pn, psgr.m_appearance,
-        #                                                                         psgr.origin_node.code,
-        #                                                                         psgr.destination_node.code)
-        #
+        # demand generation !!!
+        # self.gen_demand(duration=self.duration, is_stochastic=True)
+        # define schedules
         for ln in self.lines:
-            # define schedules
-            # ln.define_schedule([self.get_node(1), self.get_node(22)])
             ln.define_schedule()
             for v in ln.vehicles:
                 # put zero values to the vehicle characteristics
                 v.reset()
                 # correct the simulation duration
-                if self.duration < v.schedule[-1][0]:
-                    self.duration = v.schedule[-1][0]
+                # if self.duration < v.schedule[-1][0]:
+                #     self.duration = v.schedule[-1][0]
         # run the lines simulation
         self.time = 0
         while self.time <= self.duration:
             for ln in self.lines:
                 ln.run()
             self.time += time_step
-        # printing out simulation results
-        self.total_wait_time = 0
-        serviced_wait_time = 0
-        self.num_serviced_passengers = 0
-        self.sum_vehicles_time = 0
-        for ln in self.lines:
-            for v in ln.vehicles:
-                self.sum_vehicles_time += v.schedule[-1][0] - v.schedule[0][0]
-                # show servicing process
-                # for s in v.schedule:
-                #     print "at {0} in {1} :: gamma={2}".format(s[0], s[1].code, float(len(v.servicing[s]))/v.capacity)
-                #     for pas in v.servicing[s]:
-                #         print pas.origin_node.code, "-", pas.destination_node.code,  "(", pas.m_appearance, ") :",
-                #     print
-                # print
-        # estimate total wait time (under condition that unserviced passengers wait till the end of simulation)
-        unserviced_passengers_number = 0
-        for ps in self.demand:
-            if len(ps.used_vehicles) > 0:
-                self.num_serviced_passengers += 1
-                self.total_wait_time += ps.wait_time
-                serviced_wait_time += ps.wait_time
-            else:
-                unserviced_passengers_number += 1
-                self.total_wait_time += self.duration - ps.m_appearance
-        return serviced_wait_time / self.num_serviced_passengers, self.total_wait_time / len(self.demand), len(self.demand), self.num_serviced_passengers
+
+        # estimate total wait times
+        # started_wait_time = sum([p.wait_time for p in self.demand if p.service_started])
+        # finished_wait_time = sum([p.wait_time for p in self.demand if p.service_finished])
+        # nss = len([p for p in self.demand if p.service_started])
+        # nsf = len([p for p in self.demand if p.service_finished])
+        
+        # return self.total_wait_time / len(self.demand), started_wait_time / nss, finished_wait_time / nsf
+        return self.total_wait_time / len(self.demand)
 
     def reset(self):
         # reset resulting parameters of simulations
@@ -469,15 +446,33 @@ class Net:
     def load_from_file(self, file_name):
         f = open(file_name, 'r')
         for data_line in f:
+            data = data_line.strip().split('\t')
+            track = []
+            if len(data) > 3:
+                coords = data[3].split(':')
+                for idx in range(0, len(coords), 2):
+                    track.append((float(coords[idx]), float(coords[idx + 1])))
+            # print(f'{int(data[0])}-{int(data[1])}: track {track}')
+            self.add_link(int(data[0]), int(data[1]), weight=float(data[2]),
+                          directed=True, track=track)
+        f.close()
+
+    def load_nodes_from_file(self, file_name):
+        self.nodes = []
+        f = open(file_name, 'r')
+        for data_line in f:
             data = data_line.split('\t')
-            self.add_link(int(data[0]), int(data[1]), float(data[2]))
+            next_node = node.Node(code=int(data[0]), name=data[1])
+            next_node.latitude = float(data[2])
+            next_node.longitude = float(data[3])
+            self.nodes.append(next_node)
         f.close()
 
     def print_characteristics(self):
         """" Print out network parameters """
         print("Links list:")
         for lnk in self.links:
-            print("{0} - {1}: {2}".format(lnk.out_node.code, lnk.in_node.code, round(lnk.weight, 2)))
+            print(f"{lnk.out_node.code} - {lnk.in_node.code}: {round(lnk.weight, 2)}, ")
         print("Lines list:")
         for ln in self.lines:
             print(ln.trace_string, round(ln.line_length, 2))

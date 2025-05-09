@@ -5,6 +5,7 @@ class Link:
         # type: (Node, Node, float) -> Link
         self.out_node = out_node
         self.in_node = in_node
+        self.track = [] # list of tuples: [(lat1, lng1), (lat2, lng2), ...]
         self.lines_number = 1
         # link length [km]
         self.weight = weight
@@ -12,6 +13,6 @@ class Link:
         self.load = 0
 
     def __str__(self):
-        return '(' + str(self.out_node.code) + '-' + str(self.in_node.code) + ')'
+        return f'({self.out_node.code}-{self.in_node.code})'
 
 

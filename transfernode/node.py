@@ -91,4 +91,5 @@ class Node:
             wait_time += psg.wait_time
         for psg in self.in_psgs:
             wait_time += psg.wait_time
-        return wait_time
+        
+        return wait_time, len(self.in_psgs) + len(self.transfered_psgs)

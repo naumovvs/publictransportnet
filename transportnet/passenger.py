@@ -3,7 +3,8 @@ class Passenger:
         Passenger traveling in the network
     """
 
-    def __init__(self):
+    def __init__(self, net=None):
+        self.net = net
         # event moments
         self.m_appearance = 0
         self.m_boarding = []
@@ -19,7 +20,7 @@ class Passenger:
         return len(self.destination_nodes) - 1
 
     @property
-    def travel_is_finished(self):
+    def travel_to_be_finished(self):
         return self.current_destination_node is self.destination_nodes[-1]
 
     @property
@@ -33,16 +34,52 @@ class Passenger:
 
     @property
     def travel_time(self):
-        return self.m_disembarkation[-1] - self.m_appearance
+        """
+            Returns the total travel time since the appearance in the origin node
+        """
+        if self.service_finished:
+            return self.m_disembarkation[-1] - self.m_appearance
+        else:
+            return self.net.duration - self.m_appearance
+
+    @property
+    def ride_time(self):
+        """
+            Returns the total in-vehicle time
+        """
+        rt = 0
+        for i in range(self.transits_number + 1):
+            if self.m_disembarkation[i] >= self.m_boarding[i]:
+                rt += self.m_disembarkation[i] - self.m_boarding[i]
+            else: # on the way to the next stop at the moment of the simulations termination
+                rt += self.net.duration - self.m_boarding[i]
+        return rt
 
     @property
     def wait_time(self):
-        return self.m_boarding[0] - self.m_appearance + \
-               sum([self.m_boarding[i + 1] - self.m_disembarkation[i] for i in range(self.transits_number)])
+        """
+            Returns the total wait time
+        """
+        wt = 0
+        if self.m_boarding[0] > 0:
+            wt = self.m_boarding[0] - self.m_appearance
+        else:
+            return self.net.duration - self.m_appearance
+        for i in range(self.transits_number):
+            if self.m_boarding[i + 1] >= self.m_disembarkation[i]:
+                wt += self.m_boarding[i + 1] - self.m_disembarkation[i]
+            else: # waiting in the next stop at the moment of the simulations termination
+                wt += self.net.duration - self.m_disembarkation[i]
+                break
+        return wt
 
     @property
-    def transportation_time(self):
-        return sum([self.m_disembarkation[i] - self.m_boarding[i] for i in range(len(self.destination_nodes))])
+    def service_started(self):
+        return self.m_boarding[0] > self.m_appearance
+    
+    @property
+    def service_finished(self):
+        return self.m_disembarkation[-1] > self.m_appearance
 
     def reset(self):
         self.m_boarding = [0 for _ in range(self.transits_number + 1)]

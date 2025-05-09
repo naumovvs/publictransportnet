@@ -25,6 +25,7 @@ class Line:
         self.vehicles = []
         # schedule parameters [min]
         self.nodes_sequence = []
+        self.same_back_direction = True # the same trace in back direction
         self.schedule_shift = 0
         self.end_stop_duration = 5
         self.intermediate_stop_duration = 1
@@ -33,7 +34,7 @@ class Line:
             self.end_stops = [self.nodes[0], self.nodes[-1]]
         else:
             self.end_stops = [self.net.get_node(end_codes[0]), self.net.get_node(end_codes[-1])]
-        # mean velocity of buses at the line [km/h]
+        # mean velocity of vehicles at the line [km/h]
         self.velocity = 25
 
     def __str__(self):
@@ -90,19 +91,19 @@ class Line:
             nds.append(self.nodes[i])
         return nds
 
-    def define_sequence(self, turns, same_trace=True):
+    def define_sequence(self, turns):
         """
             Returns the sequence of nodes passed by vehicles during the simulation period
         """
         nds = []
         nds.extend(self.nodes[:-1])
-        for tn in range(self.turns_number - 1):
-            if same_trace:
+        for _ in range(self.turns_number - 1):
+            if self.same_back_direction:
                 nds.extend(self.nodes_reversed)
                 nds.extend(self.nodes[1:-1])
             else:
                 nds.extend(self.nodes[:-1])
-        if same_trace:
+        if self.same_back_direction:
             nds.extend(self.nodes_reversed)
         else:
             nds.append(self.nodes[-1])
@@ -113,7 +114,7 @@ class Line:
             Defines the line schedule
         """
         interval = round(self.turnaround_time / len(self.vehicles), 0)
-        self.define_sequence(self.turns_number, same_trace=True)  # the same trace in back direction
+        self.define_sequence(self.turns_number)
         t0 = self.schedule_shift
         for vhcl in self.vehicles:
             # defining start parameters of the vehicle's schedule
@@ -130,6 +131,7 @@ class Line:
                     st += self.end_stop_duration
                 else:
                     st += self.intermediate_stop_duration
+                # print(f'processing link {self.nodes_sequence[idx - 1].code}-{self.nodes_sequence[idx].code}')
                 lnk = self.net.get_link(self.nodes_sequence[idx - 1],
                                         self.nodes_sequence[idx])
                 st += round(60 * lnk.weight / self.velocity, 0)

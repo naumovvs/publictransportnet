@@ -27,6 +27,7 @@ class Population:
 
     def evolve(self, generations=100):
         winner = (None, 0)
+        fits = []
         survivors_number = int(round(self.size * self.survivors_rate))
         for g in range(generations):
             # evaluation
@@ -38,7 +39,8 @@ class Population:
             survivors = ranked_items[:survivors_number]
             # print out the winner
             winner = survivors[0].decode(), estimates[0] # estimates[0][0]
-            print("winner", g + 1, winner[0], winner[1])
+            print(f'winner #{g + 1}', winner)
+            fits.append(winner[1][0])
             # reproduction
             self.chromosomes = survivors # []
             while len(self.chromosomes) < self.size:
@@ -49,7 +51,7 @@ class Population:
                 # mutation
                 offspring.mutate(self.mutation_probability, self.mutation_turns)
                 self.chromosomes.append(offspring)
-        return winner
+        return winner, fits
 
     def printout(self):
         for c in self.chromosomes:

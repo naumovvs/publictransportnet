@@ -6,6 +6,8 @@ class Node:
 
     def __init__(self, code=0, name=""):
         self.code = code
+        self.latitude = None
+        self.longitude = None
         if name == "":
             self.name = "Node" + str(code)
         else:

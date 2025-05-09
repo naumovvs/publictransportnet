@@ -36,7 +36,7 @@ g.population_size = 100
 g.generations = 30
 g.fitness_function = fitness_function
 winner = g.run()
-print (fitness_function(winner[0]))
+print(fitness_function(winner[0]))
 
 # f = open('avtovokzal_results.csv', 'w')
 # for _ in range(300):

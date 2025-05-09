@@ -1,6 +1,6 @@
 class Vehicle:
     """
-    Vehicle servicing the line
+        Vehicle servicing the line
     """
 
     def __init__(self, capacity=40):
@@ -18,21 +18,21 @@ class Vehicle:
     @property
     def occupancy(self):
         """
-        Returns current occupancy
+            Returns current occupancy
         """
         return len(self.passengers)
 
     @property
     def model_time(self):
         """
-        Returns current model time
+            Returns current model time
         """
         return self.line.net.time
 
     @property
     def current_position(self):
         """"
-        Returns the current position at the schedule
+            Returns the current position at the schedule
         """
         if self.last_move is not None:
             return self.schedule.index(self.last_move)
@@ -77,7 +77,7 @@ class Vehicle:
                 psg.m_disembarkation[psg.current_position] = self.model_time
                 psg.current_destination_node.pass_in.append(psg)
                 # if travel is not finished, set the next destination node
-                if not psg.travel_is_finished:
+                if not psg.travel_to_be_finished:
                     psg.current_destination_node.pass_out.append(psg)
                     psg.current_destination_node = psg.destination_nodes[psg.current_position + 1]
                 self.serviced_passengers.append(psg)
@@ -95,7 +95,7 @@ class Vehicle:
                     and psg.current_destination_node in self.stops_left\
                     and self.occupancy < self.capacity:
                 passengers.remove(psg)
-                psg.m_boarding[psg.current_position] = self.line.net.time
+                psg.m_boarding[psg.current_position] = self.model_time
                 psg.used_vehicles.append(self)
                 self.passengers.append(psg)
             self.last_move[1].pass_out = passengers
