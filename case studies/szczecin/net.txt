@@ -1,0 +1,446 @@
+Osiedle Zawadzkiego,Szafera,0.263
+Szafera,Arena Szczecin,0.33
+Arena Szczecin,Rondo Olszewskiego,0.338
+Rondo Olszewskiego,Zajezdnia Pogodno,0.465
+Zajezdnia Pogodno,Unii Lubelskiej,0.65
+Unii Lubelskiej,Łękno,0.897
+Łękno,Bogumiły,0.566
+Bogumiły,Piotra Skargi,0.53
+Piotra Skargi,Felczaka,0.43
+Felczaka,Plac Szarych Szeregów,0.46
+Plac Szarych Szeregów,Plac Grunwaldzki,0.41
+Plac Grunwaldzki,Plac Rodła,0.434
+Plac Rodła,Filharmonia,0.349
+Filharmonia,Plac Żołnierza Polskiego,0.38
+Plac Żołnierza Polskiego,Brama Portowa,0.46
+Brama Portowa,Plac Zawiszy,0.54
+Plac Zawiszy,Sowińskiego,0.59
+Sowińskiego,Potulicka,0.36
+Potulicka,Sowińskiego,0.25
+Sowińskiego,Plac Zawiszy,0.34
+Plac Zawiszy,Brama Portowa,0.61
+Brama Portowa,Plac Żołnierza Polskiego,0.42
+Plac Żołnierza Polskiego,Filharmonia,0.45
+Filharmonia,Plac Rodła,0.37
+Plac Rodła,Plac Grunwaldzki,0.487
+Plac Grunwaldzki,Plac Szarych Szeregów,0.49
+Plac Szarych Szeregów,Felczaka,0.45
+Felczaka,Piotra Skargi,0.47
+Piotra Skargi,Bogumiły,0.53
+Bogumiły,Łękno,0.543
+Łękno,Unii Lubelskiej,0.892
+Unii Lubelskiej,Zajezdnia Pogodno,0.6
+Zajezdnia Pogodno,Rondo Olszewskiego,0.38
+Rondo Olszewskiego,Arena Szczecin,0.483
+Arena Szczecin,Szafera,0.34
+Szafera,Osiedle Zawadzkiego,0.477
+Dworzec Niebuszewo,Boguchwały,0.165
+Boguchwały,Niemcewicza,0.27
+Niemcewicza,Kołłątaja,0.43
+Kołłątaja,Lubomirskiego,0.41
+Lubomirskiego,Plac Witosa,0.28
+Plac Witosa,Rayskiego,0.27
+Rayskiego,Plac Rodła,0.32
+Plac Rodła,Plac Żołnierza Polskiego,0.368
+Plac Żołnierza Polskiego,Brama Portowa,0.46
+Brama Portowa,Wyszyńskiego,0.62
+Wyszyńskiego,Celna,0.376
+Celna,Energetyków,0.26
+Energetyków,SKM Port Centralny,0.61
+SKM Port Centralny,Parnica,0.83
+Parnica,Merkatora,1.09
+Merkatora,Basen Górniczy,0.59
+Basen Górniczy,Hangarowa,2.45
+Hangarowa,Jaśminowa ZUS,0.96
+Jaśminowa ZUS,Turkusowa,0.595
+Turkusowa,Turkusowa,0.25
+Turkusowa,Jaśminowa ZUS,0.58
+Jaśminowa ZUS,Hangarowa,0.95
+Hangarowa,Basen Górniczy,2.37
+Basen Górniczy,Merkatora,0.61
+Merkatora,Parnica,1.09
+Parnica,SKM Port Centralny,0.89
+SKM Port Centralny,Energetyków,0.61
+Energetyków,Celna,0.284
+Celna,Wyszyńskiego,0.366
+Wyszyńskiego,Brama Portowa,0.51
+Brama Portowa,Plac Żołnierza Polskiego,0.45
+Plac Żołnierza Polskiego,Plac Rodła,0.37
+Plac Rodła,Rayskiego,0.35
+Rayskiego,Plac Witosa,0.38
+Plac Witosa,Lubomirskiego,0.32
+Lubomirskiego,Kołłątaja,0.39
+Kołłątaja,Niemcewicza,0.46
+Niemcewicza,Dworzec Niebuszewo,0.442
+Osiedle Zawadzkiego,Szafera,0.259
+Szafera,Arena Szczecin,0.33
+Arena Szczecin,Rondo Olszewskiego,0.338
+Rondo Olszewskiego,Międzyparkowa,0.627
+Międzyparkowa,Stadion Arkonia,0.21
+Stadion Arkonia,Las Arkoński,0.55
+Las Arkoński,Wojciechowskiego,0.32
+Wojciechowskiego,Arkońska Szpital,0.47
+Arkońska Szpital,Wszystkich Świętych,0.35
+Wszystkich Świętych,Niemierzyńska Technopark,0.41
+Niemierzyńska Technopark,Muzeum Techniki,0.37
+Muzeum Techniki,Krasińskiego,0.57
+Krasińskiego,Kołłątaja,0.32
+Kołłątaja,Lubomirskiego,0.41
+Lubomirskiego,Plac Witosa,0.28
+Plac Witosa,Rayskiego,0.27
+Rayskiego,Plac Rodła,0.32
+Plac Rodła,Plac Żołnierza Polskiego,0.368
+Plac Żołnierza Polskiego,Brama Portowa,0.46
+Brama Portowa,Plac Tobrucki,0.62
+Plac Tobrucki,SKM Dworzec Główny (Kolumba),0.33
+SKM Dworzec Główny (Kolumba),Kolumba,0.58
+Kolumba,Zapadła,0.54
+Zapadła,Tama Pomorzańska,0.27
+Tama Pomorzańska,Świętego Józefa,0.28
+Świętego Józefa,Smolańska,0.65
+Smolańska,Pomorzany,0.312
+Pomorzany,Smolańska,0.445
+Smolańska,Świętego Józefa,0.64
+Świętego Józefa,Tama Pomorzańska,0.3
+Tama Pomorzańska,Zapadła,0.33
+Zapadła,Kolumba,0.451
+Kolumba,SKM Dworzec Główny (Kolumba),0.59
+SKM Dworzec Główny (Kolumba),Plac Tobrucki,0.38
+Plac Tobrucki,Brama Portowa,0.44
+Brama Portowa,Plac Żołnierza Polskiego,0.45
+Plac Żołnierza Polskiego,Plac Rodła,0.37
+Plac Rodła,Rayskiego,0.35
+Rayskiego,Plac Witosa,0.38
+Plac Witosa,Lubomirskiego,0.32
+Lubomirskiego,Kołłątaja,0.39
+Kołłątaja,Krasińskiego,0.35
+Krasińskiego,Muzeum Techniki,0.45
+Muzeum Techniki,Niemierzyńska Technopark,0.36
+Niemierzyńska Technopark,Wszystkich Świętych,0.5
+Wszystkich Świętych,Arkońska Szpital,0.26
+Arkońska Szpital,Tatrzańska,0.38
+Tatrzańska,Wojciechowskiego,0.28
+Wojciechowskiego,Las Arkoński,0.22
+Las Arkoński,Stadion Arkonia,0.54
+Stadion Arkonia,Międzyparkowa,0.25
+Międzyparkowa,Rondo Olszewskiego,0.45
+Rondo Olszewskiego,Arena Szczecin,0.488
+Arena Szczecin,Szafera,0.34
+Szafera,Osiedle Zawadzkiego,0.489
+Plac Żołnierza Polskiego,Filharmonia,0.125
+Filharmonia,Plac Rodła,0.48
+Plac Rodła,Plac Grunwaldzki,0.37
+Plac Grunwaldzki,Plac Szarych Szeregów,0.35
+Plac Szarych Szeregów,Piastów,0.525
+Piastów,Plac Kościuszki,0.505
+Plac Kościuszki,Narutowicza,0.85
+Narutowicza,Szwoleżerów,0.3
+Szwoleżerów,Plac Szyrockiego,0.43
+Plac Szyrockiego,Osiedle Polonia,0.54
+Osiedle Polonia,Starkiewicza,0.54
+Starkiewicza,Szpitalna,0.36
+Szpitalna,Starkiewicza,0.44
+Starkiewicza,Osiedle Polonia,0.079
+Osiedle Polonia,Plac Szyrockiego,0.102
+Plac Szyrockiego,Szwoleżerów,0.44
+Szwoleżerów,Narutowicza,0.36
+Narutowicza,Plac Kościuszki,0.43
+Plac Kościuszki,Piastów,0.57
+Piastów,Plac Szarych Szeregów,0.28
+Plac Szarych Szeregów,Plac Grunwaldzki,0.41
+Plac Grunwaldzki,Plac Rodła,0.434
+Plac Rodła,Plac Żołnierza Polskiego,0.34
+Osiedle Zawadzkiego,Modra,0.38
+Modra,Krzekowo,0.483
+Krzekowo,Żołnierska,0.34
+Żołnierska,Wernyhory,0.577
+Wernyhory,Brzozowskiego,0.9
+Brzozowskiego,Konopnickiej,0.48
+Konopnickiej,Poniatowskiego,0.37
+Poniatowskiego,Karłowicza,0.35
+Karłowicza,Wawrzyniaka,0.525
+Wawrzyniaka,Bohaterów Warszawy,0.505
+Bohaterów Warszawy,Piastów,0.85
+Piastów,Plac Szarych Szeregów,0.3
+Plac Szarych Szeregów,Plac Grunwaldzki,0.43
+Plac Grunwaldzki,Plac Rodła,0.28
+Plac Rodła,Matejki,0.41
+Matejki,Parkowa,0.434
+Parkowa,Dubois,0.694
+Dubois,Antosiewicza,0.55
+Antosiewicza,Stocznia Szczecińska,0.66
+Stocznia Szczecińska,Dubois,0.35
+Dubois,Parkowa,0.11
+Parkowa,Matejki,0.61
+Matejki,Plac Rodła,0.4
+Plac Rodła,Plac Grunwaldzki,0.56
+Plac Grunwaldzki,Plac Szarych Szeregów,0.66
+Plac Szarych Szeregów,Piastów,0.491
+Piastów,Bohaterów Warszawy,0.49
+Bohaterów Warszawy,Wawrzyniaka,0.19
+Wawrzyniaka,Karłowicza,0.42
+Karłowicza,Poniatowskiego,0.39
+Poniatowskiego,Konopnickiej,0.89
+Konopnickiej,Brzozowskiego,0.55
+Brzozowskiego,Wernyhory,0.34
+Wernyhory,Żołnierska,0.38
+Żołnierska,Krzekowo,0.33
+Krzekowo,Modra,0.52
+Modra,Osiedle Zawadzkiego,0.981
+Gocław,Lipowa,0.4
+Lipowa,Światowida,0.84
+Światowida,Strzałowska,0.51
+Strzałowska,Zajezdnia Golęcin,0.39
+Zajezdnia Golęcin,Robotnicza,0.54
+Robotnicza,Ludowa,0.6
+Ludowa,Dobromiry,0.47
+Dobromiry,Lubeckiego,0.29
+Lubeckiego,Stocznia Szczecińska,0.96
+Stocznia Szczecińska,Dubois,0.58
+Dubois,Teatr Polski,0.47
+Teatr Polski,Wały Chrobrego,0.41
+Wały Chrobrego,Bulwar Piastowski,0.49
+Bulwar Piastowski,Wyszyńskiego,0.51
+Wyszyńskiego,Dworcowa,0.315
+Dworcowa,SKM Dworzec Główny (Kolumba),0.426
+SKM Dworzec Główny (Kolumba),Kolumba,0.58
+Kolumba,Zapadła,0.54
+Zapadła,Tama Pomorzańska,0.27
+Tama Pomorzańska,Świętego Józefa,0.28
+Świętego Józefa,Smolańska,0.65
+Smolańska,Pomorzany,0.319
+Pomorzany,Smolańska,0.45
+Smolańska,Świętego Józefa,0.64
+Świętego Józefa,Tama Pomorzańska,0.3
+Tama Pomorzańska,Zapadła,0.33
+Zapadła,Kolumba,0.451
+Kolumba,SKM Dworzec Główny (Kolumba),0.59
+SKM Dworzec Główny (Kolumba),Dworcowa,0.305
+Dworcowa,Wyszyńskiego,0.322
+Wyszyńskiego,Bulwar Piastowski,0.59
+Bulwar Piastowski,Wały Chrobrego,0.46
+Wały Chrobrego,Teatr Polski,0.42
+Teatr Polski,Dubois,0.66
+Dubois,Stocznia Szczecińska,0.35
+Stocznia Szczecińska,Lubeckiego,0.99
+Lubeckiego,Dobromiry,0.28
+Dobromiry,Ludowa,0.49
+Ludowa,Robotnicza,0.6
+Robotnicza,Zajezdnia Golęcin,0.53
+Zajezdnia Golęcin,Strzałowska,0.51
+Strzałowska,Światowida,0.59
+Światowida,Lipowa,0.66
+Lipowa,Gocław,0.4
+Osiedle Zawadzkiego,Modra,0.38
+Modra,Krzekowo,0.483
+Krzekowo,Żołnierska,0.34
+Żołnierska,Wernyhory,0.577
+Wernyhory,Brzozowskiego,0.9
+Brzozowskiego,Konopnickiej,0.48
+Konopnickiej,Poniatowskiego,0.37
+Poniatowskiego,Karłowicza,0.35
+Karłowicza,Wawrzyniaka,0.525
+Wawrzyniaka,Bohaterów Warszawy,0.505
+Bohaterów Warszawy,Turzyn,0.85
+Turzyn,Plac Kościuszki,0.3
+Plac Kościuszki,Brama Portowa,0.56
+Brama Portowa,Wyszyńskiego,0.33
+Wyszyńskiego,Celna,0.95
+Celna,Energetyków,0.67
+Energetyków,SKM Port Centralny,0.376
+SKM Port Centralny,Parnica,0.26
+Parnica,Merkatora,0.61
+Merkatora,Basen Górniczy,0.83
+Basen Górniczy,Hangarowa,1.09
+Hangarowa,Jaśminowa ZUS,0.59
+Jaśminowa ZUS,Turkusowa,2.45
+Turkusowa,Turkusowa,0.96
+Turkusowa,Jaśminowa ZUS,0.595
+Jaśminowa ZUS,Hangarowa,0.25
+Hangarowa,Basen Górniczy,0.58
+Basen Górniczy,Merkatora,0.95
+Merkatora,Parnica,2.37
+Parnica,SKM Port Centralny,0.61
+SKM Port Centralny,Energetyków,1.09
+Energetyków,Celna,0.89
+Celna,Wyszyńskiego,0.61
+Wyszyńskiego,Brama Portowa,0.284
+Brama Portowa,Plac Zwycięstwa,0.366
+Plac Zwycięstwa,Plac Kościuszki,0.51
+Plac Kościuszki,Turzyn,0.368
+Turzyn,Bohaterów Warszawy,0.584
+Bohaterów Warszawy,Wawrzyniaka,0.36
+Wawrzyniaka,Karłowicza,0.58
+Karłowicza,Poniatowskiego,0.39
+Poniatowskiego,Konopnickiej,0.89
+Konopnickiej,Brzozowskiego,0.55
+Brzozowskiego,Wernyhory,0.34
+Wernyhory,Żołnierska,0.38
+Żołnierska,Krzekowo,0.33
+Krzekowo,Modra,0.52
+Modra,Osiedle Zawadzkiego,0.981
+Gumieńce,Kwiatowa,0.31
+Kwiatowa,Ku Słońcu,0.59
+Ku Słońcu,Szkoła Salezjańska,0.27
+Szkoła Salezjańska,Karola Miarki,0.64
+Karola Miarki,Cmentarz Centralny,0.64
+Cmentarz Centralny,Osiedle Akademickie,0.34
+Osiedle Akademickie,Sikorskiego,0.37
+Sikorskiego,Plac Kościuszki,0.38
+Plac Kościuszki,Brama Portowa,0.95
+Brama Portowa,Wyszyńskiego,0.67
+Wyszyńskiego,Celna,0.376
+Celna,Energetyków,0.26
+Energetyków,SKM Port Centralny,0.61
+SKM Port Centralny,Parnica,0.83
+Parnica,Merkatora,1.09
+Merkatora,Basen Górniczy,0.59
+Basen Górniczy,Hangarowa,2.45
+Hangarowa,Jaśminowa ZUS,0.96
+Jaśminowa ZUS,Turkusowa,0.595
+Turkusowa,Turkusowa,0.25
+Turkusowa,Jaśminowa ZUS,0.58
+Jaśminowa ZUS,Hangarowa,0.95
+Hangarowa,Basen Górniczy,2.37
+Basen Górniczy,Merkatora,0.61
+Merkatora,Parnica,1.09
+Parnica,SKM Port Centralny,0.89
+SKM Port Centralny,Energetyków,0.61
+Energetyków,Celna,0.284
+Celna,Wyszyńskiego,0.366
+Wyszyńskiego,Brama Portowa,0.51
+Brama Portowa,Plac Zwycięstwa,0.368
+Plac Zwycięstwa,Plac Kościuszki,0.584
+Plac Kościuszki,Sikorskiego,0.54
+Sikorskiego,Osiedle Akademickie,0.37
+Osiedle Akademickie,Cmentarz Centralny,0.33
+Cmentarz Centralny,Karola Miarki,0.57
+Karola Miarki,Szkoła Salezjańska,0.7
+Szkoła Salezjańska,Ku Słońcu,0.26
+Ku Słońcu,Kręta,0.38
+Kręta,Gumieńce,0.49
+Głębokie,Kasyno,0.501
+Kasyno,Goplana,0.28
+Goplana,Tor Kolarski,0.5
+Tor Kolarski,Rondo Olszewskiego,0.36
+Rondo Olszewskiego,Zajezdnia Pogodno,0.481
+Zajezdnia Pogodno,Unii Lubelskiej,0.65
+Unii Lubelskiej,Łękno,0.897
+Łękno,Bogumiły,0.566
+Bogumiły,Plac Gałczyńskiego,0.46
+Plac Gałczyńskiego,Wawrzyniaka,0.37
+Wawrzyniaka,Bohaterów Warszawy,0.3
+Bohaterów Warszawy,Turzyn,0.56
+Turzyn,Plac Kościuszki,0.33
+Plac Kościuszki,Brama Portowa,0.95
+Brama Portowa,Plac Zawiszy,0.57
+Plac Zawiszy,Sowińskiego,0.59
+Sowińskiego,Potulicka,0.36
+Potulicka,Sowińskiego,0.25
+Sowińskiego,Plac Zawiszy,0.34
+Plac Zawiszy,Brama Portowa,0.61
+Brama Portowa,Plac Zwycięstwa,0.412
+Plac Zwycięstwa,Plac Kościuszki,0.375
+Plac Kościuszki,Turzyn,0.584
+Turzyn,Bohaterów Warszawy,0.36
+Bohaterów Warszawy,Wawrzyniaka,0.58
+Wawrzyniaka,Plac Gałczyńskiego,0.39
+Plac Gałczyńskiego,Bogumiły,0.36
+Bogumiły,Łękno,0.5
+Łękno,Unii Lubelskiej,0.543
+Unii Lubelskiej,Zajezdnia Pogodno,0.892
+Zajezdnia Pogodno,Zajezdnia Pogodno,0.6
+Zajezdnia Pogodno,Rondo Olszewskiego,0.38
+Rondo Olszewskiego,Tor Kolarski,0.51
+Tor Kolarski,Goplana,0.49
+Goplana,Kasyno,0.29
+Kasyno,Głębokie,0.775
+Gumieńce,Kwiatowa,0.31
+Kwiatowa,Ku Słońcu,0.59
+Ku Słońcu,Szkoła Salezjańska,0.27
+Szkoła Salezjańska,Karola Miarki,0.64
+Karola Miarki,Cmentarz Centralny,0.64
+Cmentarz Centralny,Osiedle Akademickie,0.34
+Osiedle Akademickie,Sikorskiego,0.37
+Sikorskiego,Plac Kościuszki,0.38
+Plac Kościuszki,Brama Portowa,0.95
+Brama Portowa,Plac Żołnierza Polskiego,0.46
+Plac Żołnierza Polskiego,Filharmonia,0.37
+Filharmonia,Plac Rodła,0.35
+Plac Rodła,Rayskiego,0.38
+Rayskiego,Plac Witosa,0.32
+Plac Witosa,Lubomirskiego,0.39
+Lubomirskiego,Kołłątaja,0.35
+Kołłątaja,Krasińskiego,0.45
+Krasińskiego,Muzeum Techniki,0.36
+Muzeum Techniki,Niemierzyńska Technopark,0.5
+Niemierzyńska Technopark,Wszystkich Świętych,0.41
+Wszystkich Świętych,Arkońska Szpital,0.26
+Arkońska Szpital,Tatrzańska,0.38
+Tatrzańska,Wojciechowskiego,0.28
+Wojciechowskiego,Las Arkoński,0.22
+Las Arkoński,Stadion Arkonia,0.54
+Stadion Arkonia,Międzyparkowa,0.25
+Międzyparkowa,Rondo Olszewskiego,0.45
+Rondo Olszewskiego,Tor Kolarski,0.5
+Tor Kolarski,Goplana,0.49
+Goplana,Kasyno,0.29
+Kasyno,Głębokie,0.77
+Głębokie,Kasyno,0.5
+Kasyno,Goplana,0.28
+Goplana,Rondo Olszewskiego,0.5
+Rondo Olszewskiego,Międzyparkowa,0.36
+Międzyparkowa,Stadion Arkonia,0.63
+Stadion Arkonia,Las Arkoński,0.21
+Las Arkoński,Wojciechowskiego,0.55
+Wojciechowskiego,Tatrzańska,0.32
+Tatrzańska,Arkońska Szpital,0.47
+Arkońska Szpital,Wszystkich Świętych,0.35
+Wszystkich Świętych,Niemierzyńska Technopark,0.41
+Niemierzyńska Technopark,Muzeum Techniki,0.37
+Muzeum Techniki,Krasińskiego,0.57
+Krasińskiego,Kołłątaja,0.32
+Kołłątaja,Lubomirskiego,0.41
+Lubomirskiego,Plac Witosa,0.28
+Plac Witosa,Rayskiego,0.27
+Rayskiego,Plac Rodła,0.32
+Plac Rodła,Plac Żołnierza Polskiego,0.368
+Plac Żołnierza Polskiego,Brama Portowa,0.46
+Brama Portowa,Plac Zwycięstwa,0.355
+Plac Zwycięstwa,Plac Kościuszki,0.584
+Plac Kościuszki,Sikorskiego,0.54
+Sikorskiego,Osiedle Akademickie,0.37
+Osiedle Akademickie,Cmentarz Centralny,0.33
+Cmentarz Centralny,Karola Miarki,0.57
+Karola Miarki,Szkoła Salezjańska,0.7
+Szkoła Salezjańska,Ku Słońcu,0.26
+Ku Słońcu,Kręta,0.38
+Kręta,Gumieńce,0.49
+Dworzec Niebuszewo,Boguchwały,0.151
+Boguchwały,Niemcewicza,0.27
+Niemcewicza,Kołłątaja,0.43
+Kołłątaja,Lubomirskiego,0.41
+Lubomirskiego,Plac Witosa,0.28
+Plac Witosa,Rayskiego,0.27
+Rayskiego,Plac Rodła,0.32
+Plac Rodła,Matejki,0.697
+Matejki,Parkowa,0.55
+Parkowa,Dubois,0.66
+Dubois,Antosiewicza,0.35
+Antosiewicza,Lubeckiego,0.99
+Lubeckiego,Dobromiry,0.28
+Dobromiry,Stocznia Remontowa,0.33
+Stocznia Remontowa,Ludowa,0.22
+Ludowa,Dobromiry,0.47
+Dobromiry,Lubeckiego,0.29
+Lubeckiego,Stocznia Szczecińska,0.96
+Stocznia Szczecińska,Dubois,0.61
+Dubois,Parkowa,0.4
+Parkowa,Matejki,0.56
+Matejki,Plac Rodła,0.66
+Plac Rodła,Rayskiego,0.34
+Rayskiego,Plac Witosa,0.38
+Plac Witosa,Lubomirskiego,0.32
+Lubomirskiego,Kołłątaja,0.39
+Kołłątaja,Niemcewicza,0.46
+Niemcewicza,Dworzec Niebuszewo,0.437
